@@ -4,11 +4,14 @@ Welcome to the Hackathon. The challenge is to predict part consumption better th
 
 # setup
 
-Please follow the technical instructions in pAWorld (https://paworld.proalpha.com/pages/viewpage.action?pageId=321333399#pTEHackathon–werfteinenBlickhinterdieKulissenunseresCloudproduktsNEMO-TechnischeInformationen)
-
-In Visual Studio then create a venv environment and install all packages from requirements.txt
-
-You also need a config.ini file and the "framework" "pteframework.py" from pAWorld. Download these files into your visual studio project
+1. Please follow the technical instructions in pAWorld (https://paworld.proalpha.com/pages/viewpage.action?pageId=321333399#pTEHackathon–werfteinenBlickhinterdieKulissenunseresCloudproduktsNEMO-TechnischeInformationen)
+1. Clone this repository into your visual studio 
+1. create a venv environment (use python 3.11), install all dependecies from "requirements.txt" and activate this environment
+1. edit config.ini file and insert database connection credentials
+1. do a test run by
+``` 
+python pteframework.py
+```
 
 # Framework
 
