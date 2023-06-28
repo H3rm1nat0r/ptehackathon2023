@@ -1,0 +1,34 @@
+{
+	"folders": {},
+	"connections": {
+		"sap_hana-188ebdde738-2155fbac1608c722": {
+			"provider": "hana",
+			"driver": "sap_hana",
+			"name": "pTE",
+			"save-password": true,
+			"virtual-model-id": "sap_hana-188e9e59d0f-42b0ea052883531c",
+			"configuration": {
+				"host": "10.0.0.80",
+				"port": "30053",
+				"url": "jdbc:sap://10.0.0.80:30053",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {
+					"edition": "GENERIC"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

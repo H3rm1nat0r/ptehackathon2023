@@ -1,0 +1,19 @@
+SELECT TOP 5
+    PART_I_D,
+    COUNT(*) AS Anzahl
+FROM
+    PTE."pa_export"
+WHERE
+    PART_TYPE = 10
+AND
+    MVMT_OBJECT_I_D IS NOT NULL
+AND
+    MVMT_USAGE IS NOT NULL
+GROUP BY
+    PART_I_D
+HAVING
+    COUNT(*) > 50
+ORDER BY
+    CASE WHEN PART_I_D in ('111776') THEN 0 ELSE 1 END,
+    RAND()
+    ;
