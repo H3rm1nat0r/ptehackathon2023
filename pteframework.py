@@ -139,20 +139,20 @@ ORDER BY
 """
         data = pd.read_sql(query, conn)
 
-        # Liste der eindeutigen Teilenummern
+        # List of unique part IDs
         part_numbers = data["PART_I_D"].unique()
 
         reality_sum = pd.DataFrame(
             columns=["PART_I_D", "REALITY_VALUE_1M", "REALITY_VALUE_2M", "REALITY_VALUE_3M"]
         )
 
-        # Iteriere über jede eindeutige Teilenummer
+        # iterate over each unique part ID
         for part_number in part_numbers:
             part_data = data[
                 data["PART_I_D"] == part_number
-            ]  # Filtere Daten für die aktuelle Teilenummer
+            ]  # Filter the data of the current part ID
 
-            # Berechne die Summe der Werte für die ersten 30, 60 und 90 Tage
+            # Calculate the sum of the values for the first 30, 60, and 90 days
             date_1m = (pd.Timestamp(date_end) + pd.DateOffset(days=30)).date()
             date_2m = (pd.Timestamp(date_end) + pd.DateOffset(days=60)).date()
             date_3m = (pd.Timestamp(date_end) + pd.DateOffset(days=90)).date()
@@ -160,7 +160,7 @@ ORDER BY
             sum_2m = part_data[part_data["PROCESS_DATE"] <= date_2m]["PART_CONSUMPTION"].sum()
             sum_3m = part_data[part_data["PROCESS_DATE"] <= date_3m]["PART_CONSUMPTION"].sum()
 
-            # Füge die Werte dem DataFrame reality_sum hinzu
+            # Add the values to the DataFrame reality_sum
             reality_sum_part = pd.DataFrame(
                 {
                     "PART_I_D":         [part_number],
